@@ -60,8 +60,8 @@
     version: groovy-devel
 - git:
     local-name: laser_filters
-    uri: https://github.com/ros-perception/laser_filters.git
-    version: 1.8.5
+    uri: https://github.com/jkur/laser_filters.git
+    version: indigo-devel
 - git:
     local-name: laser_pipeline
     uri: https://github.com/ros-perception/laser_pipeline.git
@@ -254,4 +254,15 @@
     local-name: xacro
     uri: https://github.com/ros/xacro.git
     version: 1.11.3
-
+- git:
+    local-name: control_toolbox
+    uri: https://github.com/ros-controls/control_toolbox
+    version: kinetic-devel
+- git:
+    local-name: realtime_tools
+    uri: https://github.com/ros-controls/realtime_tools
+    version: kinetic-devel
+- git:
+    local-name: ros-controls
+    uri: https://github.com/ros-controls/ros_control.git
+    version: 0.15.1
