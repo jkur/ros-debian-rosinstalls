@@ -1,0 +1,11 @@
+diff --git a/nodelet_tutorial_math/src/plus.cpp b/nodelet_tutorial_math/src/plus.cpp
+index 0ac49e7..9ab1a80 100644
+--- a/nodelet_tutorial_math/src/plus.cpp
++++ b/nodelet_tutorial_math/src/plus.cpp
+@@ -68,5 +68,5 @@ private:
+   double value_;
+ };
+ 
+-PLUGINLIB_DECLARE_CLASS(nodelet_tutorial_math, Plus, nodelet_tutorial_math::Plus, nodelet::Nodelet);
++PLUGINLIB_EXPORT_CLASS(nodelet_tutorial_math::Plus, nodelet::Nodelet);
+ }

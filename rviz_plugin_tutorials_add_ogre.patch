@@ -1,0 +1,29 @@
+diff --git a/rviz_plugin_tutorials/CMakeLists.txt b/rviz_plugin_tutorials/CMakeLists.txt
+index cb021c1..f16e8b9 100644
+--- a/rviz_plugin_tutorials/CMakeLists.txt
++++ b/rviz_plugin_tutorials/CMakeLists.txt
+@@ -6,8 +6,14 @@
+ cmake_minimum_required(VERSION 2.8.3)
+ project(rviz_plugin_tutorials)
+ find_package(catkin REQUIRED COMPONENTS rviz)
+-catkin_package()
+-include_directories(${catkin_INCLUDE_DIRS})
++find_package(PkgConfig)
++pkg_check_modules(OGRE_OV OGRE)
++
++catkin_package(
++INCLUDE_DIRS
++${OGRE_OV_INCLUDE_DIRS}
++)
++include_directories(${catkin_INCLUDE_DIRS} ${OGRE_OV_INCLUDE_DIRS})
+ link_directories(${catkin_LIBRARY_DIRS})
+ 
+ ## This setting causes Qt's "MOC" generation to happen automatically.
+@@ -27,6 +33,7 @@ else()
+   set(QT_LIBRARIES Qt5::Widgets)
+ endif()
+ 
++
+ ## I prefer the Qt signals and slots to avoid defining "emit", "slots",
+ ## etc because they can conflict with boost signals, so define QT_NO_KEYWORDS here.
+ add_definitions(-DQT_NO_KEYWORDS)

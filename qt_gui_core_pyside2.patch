@@ -1,0 +1,13 @@
+diff --git a/qt_gui_cpp/src/qt_gui_cpp_shiboken/global.h b/qt_gui_cpp/src/qt_gui_cpp_shiboken/global.h
+index 684798c..f8e11d2 100644
+--- a/qt_gui_cpp/src/qt_gui_cpp_shiboken/global.h
++++ b/qt_gui_cpp/src/qt_gui_cpp_shiboken/global.h
+@@ -34,7 +34,7 @@
+ #define NULL 0
+ #endif
+ 
+-#include "pyside2_global.h"
++#include "PySide2/pyside2_global.h"
+ 
+ #include <QtCore/QtCore>
+ #include <QtGui/QtGui>
