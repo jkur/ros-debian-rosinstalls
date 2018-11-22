@@ -40,6 +40,18 @@
     uri: https://github.com/ros/urdf_parser_py.git
     version: 0.4.0
 - git:
+    local-name: urdf_tutorial
+    uri: https://github.com/ros/urdf_tutorial.git
+    version: master
+- git:
     local-name: warehouse_ros
     uri: https://github.com/ros-planning/warehouse_ros
+    version: kinetic-devel
+- git:
+    local-name: xacro
+    uri: https://github.com/ros/xacro.git
+    version: 1.11.3
+- git:
+    local-name: universal_robot
+    uri: https://github.com/ros-industrial/universal_robot
     version: kinetic-devel
