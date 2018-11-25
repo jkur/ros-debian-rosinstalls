@@ -1,0 +1,53 @@
+diff --git a/descartes_core/include/descartes_core/utils.h b/descartes_core/include/descartes_core/utils.h
+index 12f5fc5..c1c3487 100644
+--- a/descartes_core/include/descartes_core/utils.h
++++ b/descartes_core/include/descartes_core/utils.h
+@@ -28,8 +28,8 @@
+ 
+ #define DESCARTES_CLASS_FORWARD(C)                                                                                     \
+   class C;                                                                                                             \
+-  typedef boost::shared_ptr<C> C##Ptr;                                                                                 \
+-  typedef boost::shared_ptr<const C> C##ConstPtr;
++  typedef std::shared_ptr<C> C##Ptr;                                                                                 \
++  typedef std::shared_ptr<const C> C##ConstPtr;
+ 
+ namespace descartes_core
+ {
+diff --git a/descartes_moveit/package.xml b/descartes_moveit/package.xml
+index 610893b..7c19c78 100644
+--- a/descartes_moveit/package.xml
++++ b/descartes_moveit/package.xml
+@@ -18,10 +18,10 @@
+   <depend>moveit_core</depend>
+   <depend>tf</depend>
+   <depend>cmake_modules</depend>
++  <depend>pluginlib</depend>
++  <depend>moveit_ros_planning</depend>
+   <depend>descartes_core</depend>
+   <depend>descartes_trajectory</depend>
+-  <depend>moveit_ros_planning</depend>
+-  <depend>pluginlib</depend>
+   <build_depend>eigen</build_depend>
+ 
+   <export>
+diff --git a/descartes_planner/src/dense_planner.cpp b/descartes_planner/src/dense_planner.cpp
+index 91aa0a0..e4fbbe8 100644
+--- a/descartes_planner/src/dense_planner.cpp
++++ b/descartes_planner/src/dense_planner.cpp
+@@ -6,7 +6,6 @@
+  */
+ 
+ #include <descartes_planner/dense_planner.h>
+-#include <boost/make_shared.hpp>
+ 
+ namespace descartes_planner
+ {
+@@ -85,7 +84,7 @@ bool DensePlanner::updatePath()
+     error_code_ = descartes_core::PlannerErrors::OK;
+     for (auto&& p : list)
+     {
+-      path_.push_back(boost::make_shared<descartes_trajectory::JointTrajectoryPt>(std::move(p)));
++      path_.push_back(std::make_shared<descartes_trajectory::JointTrajectoryPt>(std::move(p)));
+     }
+     return true;
+   }
