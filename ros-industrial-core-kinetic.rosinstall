@@ -10,7 +10,7 @@
 - git:
     local-name: moveit
     uri: https://github.com/ros-planning/moveit.git
-    version: 0.10.5
+    version: 0.10.8
 - git:
     local-name: moveit_msgs
     uri: https://github.com/ros-planning/moveit_msgs.git
