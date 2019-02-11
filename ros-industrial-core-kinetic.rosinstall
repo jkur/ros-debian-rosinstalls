@@ -59,3 +59,7 @@
     local-name: universal_robot
     uri: https://github.com/ros-industrial/universal_robot
     version: kinetic-devel
+- git:
+    local-name: roslint
+    uri: https://github.com/ros/roslint.git
+    version: master
